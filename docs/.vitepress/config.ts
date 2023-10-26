@@ -1,10 +1,9 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-    title: 'AI Ultra',
+    title: ' ',
     themeConfig: {
-        logo: '/logo.png',
-        siteTitle: 'AI Ultra',
+        siteTitle: ' ',
         search: {
         provider: 'local'
         }

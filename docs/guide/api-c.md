@@ -1,5 +1,5 @@
 # 调用接口
-### 1.接口地址：**https://api.aiutra.com**
+### 1.接口地址：https://api.aiutra.com
 ### 2.调用说明
 - 计费规则：与官网完全一致
 - 调用方式：与官网完全一致 
@@ -10,7 +10,7 @@
 #### Curl：
  ```json
 -H "Content-Type: application/json" \
--H "Authorization: Bearer sk-***************" \
+-H "Authorization: Bearer sk-*" \
 -d '{
     "model": "gpt-4",
     "messages": [{"role": "system", "content": "You are a helpful assistant."}, {"role": "user", "content": "鲁迅为什么打周树人"}]
@@ -19,7 +19,7 @@
 #### Python：
  ```python
 import openai
-openai.api_key = "sk-***************"
+openai.api_key = "sk-*"
 openai.api_base = "https://api.aiutra.com/v1"
 response = openai.ChatCompletion.create(
     model='gpt-4',

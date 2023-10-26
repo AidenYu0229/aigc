@@ -11,7 +11,7 @@
 
 ### 如何使用
 ::: warning
-AI Ultra 学术优化需先购买**授权密钥**才能使用
+AI Ultra 学术优化需先购买授权密钥才能使用
 :::
 1. 前往[统一支付平台](http://pay.wzunjh.top?code=YT0xMSZiPTMx)购买密钥
 2. 访问 AI Ultra 学术优化[官网](http://academic.aiutra.com)

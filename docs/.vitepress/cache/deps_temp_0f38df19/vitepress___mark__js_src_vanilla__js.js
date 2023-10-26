@@ -1,6 +1,6 @@
 // node_modules/.pnpm/mark.js@8.11.1/node_modules/mark.js/src/lib/domiterator.js
 var DOMIterator = class _DOMIterator {
-  /**
+  /
    * @param {HTMLElement|HTMLElement[]|NodeList|string} ctx - The context DOM
    * element, an array of DOM elements, a NodeList or a selector
    * @param {boolean} [iframes=true] - A boolean indicating if iframes should
@@ -19,7 +19,7 @@ var DOMIterator = class _DOMIterator {
     this.exclude = exclude;
     this.iframesTimeout = iframesTimeout;
   }
-  /**
+  /
    * Checks if the specified DOM element matches the selector
    * @param  {HTMLElement} element - The DOM element
    * @param  {string|string[]} selector - The selector or an array with
@@ -43,7 +43,7 @@ var DOMIterator = class _DOMIterator {
       return false;
     }
   }
-  /**
+  /
    * Returns all contexts filtered by duplicates (even nested)
    * @return {HTMLElement[]} - An array containing DOM contexts
    * @access protected
@@ -73,11 +73,11 @@ var DOMIterator = class _DOMIterator {
     });
     return filteredCtx;
   }
-  /**
+  /
    * @callback DOMIterator~getIframeContentsSuccessCallback
    * @param {HTMLDocument} contents - The contentDocument of the iframe
    */
-  /**
+  /
    * Calls the success callback function with the iframe document. If it can't
    * be accessed it calls the error callback function
    * @param {HTMLElement} ifr - The iframe DOM element
@@ -101,7 +101,7 @@ var DOMIterator = class _DOMIterator {
       successFn(doc);
     }
   }
-  /**
+  /
    * Checks if an iframe is empty (if about:blank is the shown page)
    * @param {HTMLElement} ifr - The iframe DOM element
    * @return {boolean}
@@ -111,7 +111,7 @@ var DOMIterator = class _DOMIterator {
     const bl = "about:blank", src = ifr.getAttribute("src").trim(), href = ifr.contentWindow.location.href;
     return href === bl && src !== bl && src;
   }
-  /**
+  /
    * Observes the onload event of an iframe and calls the success callback or
    * the error callback if the iframe is inaccessible. If the event isn't
    * fired within the specified {@link DOMIterator#iframesTimeout}, then it'll
@@ -141,16 +141,16 @@ var DOMIterator = class _DOMIterator {
     ifr.addEventListener("load", listener);
     tout = setTimeout(listener, this.iframesTimeout);
   }
-  /**
+  /
    * Callback when the iframe is ready
    * @callback DOMIterator~onIframeReadySuccessCallback
    * @param {HTMLDocument} contents - The contentDocument of the iframe
    */
-  /**
+  /
    * Callback if the iframe can't be accessed
    * @callback DOMIterator~onIframeReadyErrorCallback
    */
-  /**
+  /
    * Calls the callback if the specified iframe is ready for DOM access
    * @param  {HTMLElement} ifr - The iframe DOM element
    * @param  {DOMIterator~onIframeReadySuccessCallback} successFn - Success
@@ -175,11 +175,11 @@ var DOMIterator = class _DOMIterator {
       errorFn();
     }
   }
-  /**
+  /
    * Callback when all iframes are ready for DOM access
    * @callback DOMIterator~waitForIframesDoneCallback
    */
-  /**
+  /
    * Iterates over all iframes and calls the done callback when all of them
    * are ready for DOM access (including nested ones)
    * @param {HTMLElement} ctx - The context DOM element
@@ -200,24 +200,24 @@ var DOMIterator = class _DOMIterator {
       }
     });
   }
-  /**
+  /
    * Callback allowing to filter an iframe. Must return true when the element
    * should remain, otherwise false
    * @callback DOMIterator~forEachIframeFilterCallback
    * @param {HTMLElement} iframe - The iframe DOM element
    */
-  /**
+  /
    * Callback for each iframe content
    * @callback DOMIterator~forEachIframeEachCallback
    * @param {HTMLElement} content - The iframe document
    */
-  /**
+  /
    * Callback if all iframes inside the context were handled
    * @callback DOMIterator~forEachIframeEndCallback
    * @param {number} handled - The number of handled iframes (those who
    * wheren't filtered)
    */
-  /**
+  /
    * Iterates over all iframes inside the specified context and calls the
    * callbacks when they're ready. Filters iframes based on the instance
    * exclusion selectors
@@ -253,7 +253,7 @@ var DOMIterator = class _DOMIterator {
       }
     });
   }
-  /**
+  /
    * Creates a NodeIterator on the specified context
    * @see {@link https://developer.mozilla.org/en/docs/Web/API/NodeIterator}
    * @param {HTMLElement} ctx - The context DOM element
@@ -265,7 +265,7 @@ var DOMIterator = class _DOMIterator {
   createIterator(ctx, whatToShow, filter) {
     return document.createNodeIterator(ctx, whatToShow, filter, false);
   }
-  /**
+  /
    * Creates an instance of DOMIterator in an iframe
    * @param {HTMLDocument} contents - Iframe document
    * @return {DOMIterator}
@@ -274,7 +274,7 @@ var DOMIterator = class _DOMIterator {
   createInstanceOnIframe(contents) {
     return new _DOMIterator(contents.querySelector("html"), this.iframes);
   }
-  /**
+  /
    * Checks if an iframe occurs between two nodes, more specifically if an
    * iframe occurs before the specified node and after the specified prevNode
    * @param {HTMLElement} node - The node that should occur after the iframe
@@ -298,14 +298,14 @@ var DOMIterator = class _DOMIterator {
     }
     return false;
   }
-  /**
+  /
    * @typedef {DOMIterator~getIteratorNodeReturn}
    * @type {object.<string>}
    * @property {HTMLElement} prevNode - The previous node or null if there is
    * no
    * @property {HTMLElement} node - The current node
    */
-  /**
+  /
    * Returns the previous and current node of the specified iterator
    * @param {NodeIterator} itr - The iterator
    * @return {DOMIterator~getIteratorNodeReturn}
@@ -324,7 +324,7 @@ var DOMIterator = class _DOMIterator {
       node
     };
   }
-  /**
+  /
    * An array containing objects. The object key "val" contains an iframe
    * DOM element. The object key "handled" contains a boolean indicating if
    * the iframe was handled already.
@@ -336,7 +336,7 @@ var DOMIterator = class _DOMIterator {
    * @typedef DOMIterator~checkIframeFilterIfr
    * @type {object[]}
    */
-  /**
+  /
    * Checks if an iframe wasn't handled already and if so, calls
    * {@link DOMIterator#compareNodeIframe} to check if it should be handled.
    * Information wheter an iframe was or wasn't handled is given within the
@@ -377,7 +377,7 @@ var DOMIterator = class _DOMIterator {
     }
     return false;
   }
-  /**
+  /
    * Creates an iterator on all open iframes in the specified array and calls
    * the end callback when finished
    * @param {DOMIterator~checkIframeFilterIfr} ifr
@@ -399,7 +399,7 @@ var DOMIterator = class _DOMIterator {
       }
     });
   }
-  /**
+  /
    * Iterates through all nodes in the specified context and handles iframe
    * nodes at the correct position
    * @param {DOMIterator~whatToShow} whatToShow
@@ -440,16 +440,16 @@ var DOMIterator = class _DOMIterator {
     }
     doneCb();
   }
-  /**
+  /
    * Callback for each node
    * @callback DOMIterator~forEachNodeCallback
    * @param {HTMLElement} node - The DOM text node element
    */
-  /**
+  /
    * Callback if all contexts were handled
    * @callback DOMIterator~forEachNodeEndCallback
    */
-  /**
+  /
    * Iterates over all contexts and initializes
    * {@link DOMIterator#iterateThroughNodes iterateThroughNodes} on them
    * @param {DOMIterator~whatToShow} whatToShow
@@ -480,14 +480,14 @@ var DOMIterator = class _DOMIterator {
       }
     });
   }
-  /**
+  /
    * Callback to filter nodes. Can return e.g. NodeFilter.FILTER_ACCEPT or
    * NodeFilter.FILTER_REJECT
    * @see {@link http://tinyurl.com/zdczmm2}
    * @callback DOMIterator~filterCb
    * @param {HTMLElement} node - The node to filter
    */
-  /**
+  /
    * @typedef DOMIterator~whatToShow
    * @see {@link http://tinyurl.com/zfqqkx2}
    * @type {number}
@@ -497,7 +497,7 @@ var DOMIterator = class _DOMIterator {
 // node_modules/.pnpm/mark.js@8.11.1/node_modules/mark.js/src/lib/mark.js
 var Mark = class {
   // eslint-disable-line no-unused-vars
-  /**
+  /
    * @param {HTMLElement|HTMLElement[]|NodeList|string} ctx - The context DOM
    * element, an array of DOM elements, a NodeList or a selector
    */
@@ -509,7 +509,7 @@ var Mark = class {
       this.ie = true;
     }
   }
-  /**
+  /
    * Options defined by the user. They will be initialized from one of the
    * public methods. See {@link Mark#mark}, {@link Mark#markRegExp},
    * {@link Mark#markRanges} and {@link Mark#unmark} for option properties.
@@ -548,7 +548,7 @@ var Mark = class {
   get opt() {
     return this._opt;
   }
-  /**
+  /
    * An instance of DOMIterator
    * @type {DOMIterator}
    * @access protected
@@ -561,7 +561,7 @@ var Mark = class {
       this.opt.iframesTimeout
     );
   }
-  /**
+  /
    * Logs a message if log is enabled
    * @param {string} msg - The message to log
    * @param {string} [level="debug"] - The log level, e.g. <code>warn</code>
@@ -577,7 +577,7 @@ var Mark = class {
       log[level](`mark.js: ${msg}`);
     }
   }
-  /**
+  /
    * Escapes a string for usage within a regular expression
    * @param {string} str - The string to escape
    * @return {string}
@@ -586,7 +586,7 @@ var Mark = class {
   escapeStr(str) {
     return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
   }
-  /**
+  /
    * Creates a regular expression string to match the specified search
    * term including synonyms, diacritics and accuracy if defined
    * @param  {string} str - The search term to be used
@@ -617,7 +617,7 @@ var Mark = class {
     str = this.createAccuracyRegExp(str);
     return str;
   }
-  /**
+  /
    * Creates a regular expression string to match the defined synonyms
    * @param  {string} str - The search term to be used
    * @return {string}
@@ -641,7 +641,7 @@ var Mark = class {
     }
     return str;
   }
-  /**
+  /
    * Setup synonyms to work with ignoreJoiners and or ignorePunctuation
    * @param {string} str - synonym key or value to process
    * @return {string} - processed synonym string
@@ -652,7 +652,7 @@ var Mark = class {
     }
     return str;
   }
-  /**
+  /
    * Sets up the regular expression string to allow later insertion of
    * wildcard regular expression matches
    * @param  {string} str - The search term to be used
@@ -667,7 +667,7 @@ var Mark = class {
       return val.charAt(0) === "\\" ? "*" : "";
     });
   }
-  /**
+  /
    * Sets up the regular expression string to allow later insertion of
    * wildcard regular expression matches
    * @param  {string} str - The search term to be used
@@ -678,7 +678,7 @@ var Mark = class {
     let spaces = this.opt.wildcards === "withSpaces";
     return str.replace(/\u0001/g, spaces ? "[\\S\\s]?" : "\\S?").replace(/\u0002/g, spaces ? "[\\S\\s]*?" : "\\S*");
   }
-  /**
+  /
    * Sets up the regular expression string to allow later insertion of
    * designated characters (soft hyphens & zero width characters)
    * @param  {string} str - The search term to be used
@@ -695,7 +695,7 @@ var Mark = class {
       }
     });
   }
-  /**
+  /
    * Creates a regular expression string to allow ignoring of designated
    * characters (soft hyphens, zero width characters & punctuation) based on
    * the specified option values of <code>ignorePunctuation</code> and
@@ -715,7 +715,7 @@ var Mark = class {
     }
     return joiner.length ? str.split(/\u0000+/).join(`[${joiner.join("")}]*`) : str;
   }
-  /**
+  /
    * Creates a regular expression string to match diacritics
    * @param  {string} str - The search term to be used
    * @return {string}
@@ -785,7 +785,7 @@ var Mark = class {
     });
     return str;
   }
-  /**
+  /
    * Creates a regular expression string that merges whitespace characters
    * including subsequent ones into a single pattern, one or multiple
    * whitespaces
@@ -796,7 +796,7 @@ var Mark = class {
   createMergedBlanksRegExp(str) {
     return str.replace(/[\s]+/gmi, "[\\s]+");
   }
-  /**
+  /
    * Creates a regular expression string to match the specified string with
    * the defined accuracy. As in the regular expression of "exactly" can be
    * a group containing a blank at the beginning, all regular expressions will
@@ -823,13 +823,13 @@ var Mark = class {
         return `(^|\\s${lsJoin})(${str})(?=$|\\s${lsJoin})`;
     }
   }
-  /**
+  /
    * @typedef Mark~separatedKeywords
    * @type {object.<string>}
    * @property {array.<string>} keywords - The list of keywords
    * @property {number} length - The length
    */
-  /**
+  /
    * Returns a list of keywords dependent on whether separate word search
    * was defined. Also it filters empty keywords
    * @param {array} sv - The array of keywords
@@ -859,7 +859,7 @@ var Mark = class {
       "length": stack.length
     };
   }
-  /**
+  /
    * Check if a value is a number
    * @param {number|string} value - the value to check;
    * numeric strings allowed
@@ -869,19 +869,19 @@ var Mark = class {
   isNumeric(value) {
     return Number(parseFloat(value)) == value;
   }
-  /**
+  /
    * @typedef Mark~rangeObject
    * @type {object}
    * @property {number} start - The start position within the composite value
    * @property {number} length - The length of the string to mark within the
    * composite value.
    */
-  /**
+  /
    * @typedef Mark~setOfRanges
    * @type {object[]}
    * @property {Mark~rangeObject}
    */
-  /**
+  /
    * Returns a processed list of integer offset indexes that do not overlap
    * each other, and remove any string values or additional elements
    * @param {Mark~setOfRanges} array - unprocessed raw array
@@ -911,7 +911,7 @@ var Mark = class {
     });
     return stack;
   }
-  /**
+  /
    * @typedef Mark~validObject
    * @type {object}
    * @property {number} start - The start position within the composite value
@@ -920,7 +920,7 @@ var Mark = class {
    * @property {boolean} valid - boolean value indicating that the start and
    * calculated end range is valid
    */
-  /**
+  /
     * Initial validation of ranges for markRanges. Preliminary checks are done
     * to ensure the start and length values exist and are not zero or non-
     * numeric
@@ -952,7 +952,7 @@ var Mark = class {
       valid
     };
   }
-  /**
+  /
    * Check valid range for markRanges. Check ranges with access to the context
    * string. Range values are double checked, lengths that extend the mark
    * beyond the string length are limitied and ranges containing only
@@ -986,7 +986,7 @@ var Mark = class {
       valid
     };
   }
-  /**
+  /
    * @typedef Mark~getTextNodesDict
    * @type {object.<string>}
    * @property {string} value - The composite value of all text nodes
@@ -997,12 +997,12 @@ var Mark = class {
    * value
    * @property {HTMLElement} nodes.node - The DOM text node element
    */
-  /**
+  /
    * Callback
    * @callback Mark~getTextNodesCallback
    * @param {Mark~getTextNodesDict}
    */
-  /**
+  /
    * Calls the callback with an object containing all text nodes (including
    * iframe text nodes) with start and end positions and the composite value
    * of them (string)
@@ -1030,7 +1030,7 @@ var Mark = class {
       });
     });
   }
-  /**
+  /
    * Checks if an element matches any of the specified exclude selectors. Also
    * it checks for elements in which no marks should be performed (e.g.
    * script and style tags) and optionally already marked elements
@@ -1048,7 +1048,7 @@ var Mark = class {
       "html"
     ]));
   }
-  /**
+  /
    * Wraps the instance element and class around matches that fit the start
    * and end positions within the node
    * @param  {HTMLElement} node - The DOM text node
@@ -1069,7 +1069,7 @@ var Mark = class {
     startNode.parentNode.replaceChild(repl, startNode);
     return ret;
   }
-  /**
+  /
    * @typedef Mark~wrapRangeInMappedTextNodeDict
    * @type {object.<string>}
    * @property {string} value - The composite value of all text nodes
@@ -1080,19 +1080,19 @@ var Mark = class {
    * value
    * @property {HTMLElement} nodes.node - The DOM text node element
    */
-  /**
+  /
    * Each callback
    * @callback Mark~wrapMatchesEachCallback
    * @param {HTMLElement} node - The wrapped DOM element
    * @param {number} lastIndex - The last matching position within the
    * composite value of text nodes
    */
-  /**
+  /
    * Filter callback
    * @callback Mark~wrapMatchesFilterCallback
    * @param {HTMLElement} node - The matching text node DOM element
    */
-  /**
+  /
    * Determines matches by start and end positions using the text node
    * dictionary even across text nodes and calls
    * {@link Mark#wrapRangeInTextNode} to wrap them
@@ -1132,22 +1132,22 @@ var Mark = class {
       return true;
     });
   }
-  /**
+  /
    * Filter callback before each wrapping
    * @callback Mark~wrapMatchesFilterCallback
    * @param {string} match - The matching string
    * @param {HTMLElement} node - The text node where the match occurs
    */
-  /**
+  /
    * Callback for each wrapped element
    * @callback Mark~wrapMatchesEachCallback
    * @param {HTMLElement} element - The marked DOM element
    */
-  /**
+  /
    * Callback on end
    * @callback Mark~wrapMatchesEndCallback
    */
-  /**
+  /
    * Wraps the instance element and class around matches within single HTML
    * elements in all contexts
    * @param {RegExp} regex - The regular expression to be searched for
@@ -1186,22 +1186,22 @@ var Mark = class {
       endCb();
     });
   }
-  /**
+  /
    * Callback for each wrapped element
    * @callback Mark~wrapMatchesAcrossElementsEachCallback
    * @param {HTMLElement} element - The marked DOM element
    */
-  /**
+  /
    * Filter callback before each wrapping
    * @callback Mark~wrapMatchesAcrossElementsFilterCallback
    * @param {string} match - The matching string
    * @param {HTMLElement} node - The text node where the match occurs
    */
-  /**
+  /
    * Callback on end
    * @callback Mark~wrapMatchesAcrossElementsEndCallback
    */
-  /**
+  /
    * Wraps the instance element and class around matches across all HTML
    * elements in all contexts
    * @param {RegExp} regex - The regular expression to be searched for
@@ -1234,7 +1234,7 @@ var Mark = class {
       endCb();
     });
   }
-  /**
+  /
    * Callback for each wrapped element
    * @callback Mark~wrapRangeFromIndexEachCallback
    * @param {HTMLElement} element - The marked DOM element
@@ -1242,7 +1242,7 @@ var Mark = class {
    * start and length values will be numeric integers modified from the
    * provided original ranges.
    */
-  /**
+  /
    * Filter callback before each wrapping
    * @callback Mark~wrapRangeFromIndexFilterCallback
    * @param {HTMLElement} node - The text node which includes the range
@@ -1250,11 +1250,11 @@ var Mark = class {
    * @param {string} match - string extracted from the matching range
    * @param {number} counter - A counter indicating the number of all marks
    */
-  /**
+  /
    * Callback on end
    * @callback Mark~wrapRangeFromIndexEndCallback
    */
-  /**
+  /
    * Wraps the indicated ranges across all HTML elements in all contexts
    * @param {Mark~setOfRanges} ranges
    * @param {Mark~wrapRangeFromIndexFilterCallback} filterCb
@@ -1287,7 +1287,7 @@ var Mark = class {
       endCb();
     });
   }
-  /**
+  /
    * Unwraps the specified DOM node with its content (text nodes or HTML)
    * without destroying possibly present events (using innerHTML) and
    * normalizes the parent at the end (merge splitted text nodes)
@@ -1307,7 +1307,7 @@ var Mark = class {
       this.normalizeTextNode(parent);
     }
   }
-  /**
+  /
    * Normalizes text nodes. It's a workaround for the native normalize method
    * that has a bug in IE (see attached link). Should only be used in IE
    * browsers as it's slower than the native method.
@@ -1329,12 +1329,12 @@ var Mark = class {
     }
     this.normalizeTextNode(node.nextSibling);
   }
-  /**
+  /
    * Callback when finished
    * @callback Mark~commonDoneCallback
    * @param {number} totalMatches - The number of marked elements
    */
-  /**
+  /
    * @typedef Mark~commonOptions
    * @type {object.<string>}
    * @property {string} [element="mark"] - HTML element tag name
@@ -1347,24 +1347,24 @@ var Mark = class {
    * @property {object} [log=window.console] - Where to log messages (only if
    * debug is true)
    */
-  /**
+  /
    * Callback for each marked element
    * @callback Mark~markRegExpEachCallback
    * @param {HTMLElement} element - The marked DOM element
    */
-  /**
+  /
    * Callback if there were no matches
    * @callback Mark~markRegExpNoMatchCallback
    * @param {RegExp} regexp - The regular expression
    */
-  /**
+  /
    * Callback to filter matches
    * @callback Mark~markRegExpFilterCallback
    * @param {HTMLElement} textNode - The text node which includes the match
    * @param {string} match - The matching string for the RegExp
    * @param {number} counter - A counter indicating the number of all marks
    */
-  /**
+  /
    * These options also include the common options from
    * {@link Mark~commonOptions}
    * @typedef Mark~markRegExpOptions
@@ -1373,7 +1373,7 @@ var Mark = class {
    * @property {Mark~markRegExpNoMatchCallback} [noMatch]
    * @property {Mark~markRegExpFilterCallback} [filter]
    */
-  /**
+  /
    * Marks a custom regular expression
    * @param  {RegExp} regexp - The regular expression
    * @param  {Mark~markRegExpOptions} [opt] - Optional options object
@@ -1399,17 +1399,17 @@ var Mark = class {
       this.opt.done(totalMatches);
     });
   }
-  /**
+  /
    * Callback for each marked element
    * @callback Mark~markEachCallback
    * @param {HTMLElement} element - The marked DOM element
    */
-  /**
+  /
    * Callback if there were no matches
    * @callback Mark~markNoMatchCallback
    * @param {RegExp} term - The search term that was not found
    */
-  /**
+  /
    * Callback to filter matches
    * @callback Mark~markFilterCallback
    * @param {HTMLElement} textNode - The text node which includes the match
@@ -1419,14 +1419,14 @@ var Mark = class {
    * @param {number} termCounter - A counter indicating the number of marks
    * for the specific match
    */
-  /**
+  /
    * @typedef Mark~markAccuracyObject
    * @type {object.<string>}
    * @property {string} value - A accuracy string value
    * @property {string[]} limiters - A custom array of limiters. For example
    * <code>["-", ","]</code>
    */
-  /**
+  /
    * @typedef Mark~markAccuracySetting
    * @type {string}
    * @property {"partially"|"complementary"|"exactly"|Mark~markAccuracyObject}
@@ -1447,7 +1447,7 @@ var Mark = class {
    *   "exactly" or "complementary"</li>
    * </ul>
    */
-  /**
+  /
    * @typedef Mark~markWildcardsSetting
    * @type {string}
    * @property {"disabled"|"enabled"|"withSpaces"}
@@ -1465,7 +1465,7 @@ var Mark = class {
    *   etc).</li>
    * </ul>
    */
-  /**
+  /
    * @typedef Mark~markIgnorePunctuationSetting
    * @type {string[]}
    * @property {string} The strings in this setting will contain punctuation
@@ -1484,7 +1484,7 @@ var Mark = class {
    *   as an underscore.</li>
    * </ul>
    */
-  /**
+  /
    * These options also include the common options from
    * {@link Mark~commonOptions}
    * @typedef Mark~markOptions
@@ -1508,7 +1508,7 @@ var Mark = class {
    * @property {Mark~markNoMatchCallback} [noMatch]
    * @property {Mark~markFilterCallback} [filter]
    */
-  /**
+  /
    * Marks the specified search terms
    * @param {string|string[]} [sv] - Search value, either a search string or
    * an array containing multiple search strings
@@ -1550,19 +1550,19 @@ var Mark = class {
       handler(kwArr[0]);
     }
   }
-  /**
+  /
    * Callback for each marked element
    * @callback Mark~markRangesEachCallback
    * @param {HTMLElement} element - The marked DOM element
    * @param {array} range - array of range start and end points
    */
-  /**
+  /
    * Callback if a processed range is invalid, out-of-bounds, overlaps another
    * range, or only matches whitespace
    * @callback Mark~markRangesNoMatchCallback
    * @param {Mark~rangeObject} range - a range object
    */
-  /**
+  /
    * Callback to filter matches
    * @callback Mark~markRangesFilterCallback
    * @param {HTMLElement} node - The text node which includes the range
@@ -1570,7 +1570,7 @@ var Mark = class {
    * @param {string} match - string extracted from the matching range
    * @param {number} counter - A counter indicating the number of all marks
    */
-  /**
+  /
    * These options also include the common options from
    * {@link Mark~commonOptions}
    * @typedef Mark~markRangesOptions
@@ -1579,7 +1579,7 @@ var Mark = class {
    * @property {Mark~markRangesNoMatchCallback} [noMatch]
    * @property {Mark~markRangesFilterCallback} [filter]
    */
-  /**
+  /
    * Marks an array of objects containing a start with an end or length of the
    * string to mark
    * @param  {Mark~setOfRanges} rawRanges - The original (preprocessed)
@@ -1611,7 +1611,7 @@ var Mark = class {
       this.opt.done(totalMatches);
     }
   }
-  /**
+  /
    * Removes all marked elements inside the context with their HTML and
    * normalizes the parent at the end
    * @param  {Mark~commonOptions} [opt] - Optional options object

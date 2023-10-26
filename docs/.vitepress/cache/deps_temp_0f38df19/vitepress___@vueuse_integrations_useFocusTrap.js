@@ -685,11 +685,11 @@ var createFocusTrap = function createFocusTrap2(elements, userOptions) {
         container,
         tabbableNodes,
         focusableNodes,
-        /** True if at least one node with positive `tabindex` was found in this container. */
+        / True if at least one node with positive `tabindex` was found in this container. */
         posTabIndexesFound,
-        /** First tabbable node in container, __tabindex__ order; `undefined` if none. */
+        / First tabbable node in container, __tabindex__ order; `undefined` if none. */
         firstTabbableNode,
-        /** Last tabbable node in container, __tabindex__ order; `undefined` if none. */
+        / Last tabbable node in container, __tabindex__ order; `undefined` if none. */
         lastTabbableNode,
         // NOTE: DOM order is NOT NECESSARILY "document position" order, but figuring that out
         //  would require more than just https://developer.mozilla.org/en-US/docs/Web/API/Node/compareDocumentPosition
@@ -698,11 +698,11 @@ var createFocusTrap = function createFocusTrap2(elements, userOptions) {
         //  to address an edge case related to positive tabindex support, this seems like a much easier,
         //  "close enough most of the time" alternative for positive tabindexes which should generally
         //  be avoided anyway...
-        /** First tabbable node in container, __DOM__ order; `undefined` if none. */
+        / First tabbable node in container, __DOM__ order; `undefined` if none. */
         firstDomTabbableNode,
-        /** Last tabbable node in container, __DOM__ order; `undefined` if none. */
+        / Last tabbable node in container, __DOM__ order; `undefined` if none. */
         lastDomTabbableNode,
-        /**
+        /
          * Finds the __tabbable__ node that follows the given node in the specified direction,
          *  in this container, if any.
          * @param {HTMLElement} node

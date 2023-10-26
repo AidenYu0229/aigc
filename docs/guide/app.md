@@ -17,7 +17,7 @@
 ![如图](https://tuchuang111025.oss-cn-shenzhen.aliyuncs.com/6735a97f28e5bff1ea5e45cf5691e768.jpg)
 
 ### 3.Windows/MacOS
-推荐使用**Microsoft Edge**按下图指引添加到主页
+推荐使用Microsoft Edge按下图指引添加到主页
 ![](https://tuchuang111025.oss-cn-shenzhen.aliyuncs.com/2725015686.png)
 
 ### 4.其他浏览器

@@ -154,7 +154,7 @@ var KEYS = "KEYS";
 var VALUES = "VALUES";
 var LEAF = "";
 var TreeIterator = (
-  /** @class */
+  / @class */
   function() {
     function TreeIterator2(set, type) {
       var node = set._tree;
@@ -286,7 +286,7 @@ var recurse = function(node, query, maxDistance, results, matrix, m, n, prefix) 
   }
 };
 var SearchableMap = (
-  /** @class */
+  / @class */
   function() {
     function SearchableMap2(tree, prefix) {
       if (tree === void 0) {
@@ -384,7 +384,7 @@ var SearchableMap = (
       return this;
     };
     Object.defineProperty(SearchableMap2.prototype, "size", {
-      /**
+      /
        * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/size
        */
       get: function() {
@@ -596,7 +596,7 @@ var OR = "or";
 var AND = "and";
 var AND_NOT = "and_not";
 var MiniSearch = (
-  /** @class */
+  / @class */
   function() {
     function MiniSearch2(options) {
       if ((options === null || options === void 0 ? void 0 : options.fields) == null) {
@@ -1049,7 +1049,7 @@ var MiniSearch = (
       return this.dirtCount >= minDirtCount && this.dirtFactor >= minDirtFactor;
     };
     Object.defineProperty(MiniSearch2.prototype, "isVacuuming", {
-      /**
+      /
        * Is `true` if a vacuuming operation is ongoing, `false` otherwise
        */
       get: function() {
@@ -1059,7 +1059,7 @@ var MiniSearch = (
       configurable: true
     });
     Object.defineProperty(MiniSearch2.prototype, "dirtCount", {
-      /**
+      /
        * The number of documents discarded since the most recent vacuuming
        */
       get: function() {
@@ -1069,7 +1069,7 @@ var MiniSearch = (
       configurable: true
     });
     Object.defineProperty(MiniSearch2.prototype, "dirtFactor", {
-      /**
+      /
        * A number between 0 and 1 giving an indication about the proportion of
        * documents that are discarded, and can therefore be cleaned up by vacuuming.
        * A value close to 0 means that the index is relatively clean, while a higher
@@ -1179,7 +1179,7 @@ var MiniSearch = (
       return results;
     };
     Object.defineProperty(MiniSearch2.prototype, "documentCount", {
-      /**
+      /
        * Total number of documents available to search
        */
       get: function() {
@@ -1189,7 +1189,7 @@ var MiniSearch = (
       configurable: true
     });
     Object.defineProperty(MiniSearch2.prototype, "termCount", {
-      /**
+      /
        * Number of terms in the index
        */
       get: function() {

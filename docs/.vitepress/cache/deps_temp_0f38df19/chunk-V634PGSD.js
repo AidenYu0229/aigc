@@ -290,14 +290,14 @@ var EffectScope = class {
       warn(`cannot run an inactive effect scope.`);
     }
   }
-  /**
+  /
    * This should only be called on non-detached scopes
    * @internal
    */
   on() {
     activeEffectScope = this;
   }
-  /**
+  /
    * This should only be called on non-detached scopes
    * @internal
    */
@@ -9530,7 +9530,7 @@ var VueElement = class _VueElement extends BaseClass {
       }
     });
   }
-  /**
+  /
    * resolve inner component definition (handle possible async component)
    */
   _resolveDef() {
@@ -9598,13 +9598,13 @@ var VueElement = class _VueElement extends BaseClass {
     }
     this._setProp(camelKey, value, false);
   }
-  /**
+  /
    * @internal
    */
   _getProp(key) {
     return this._props[key];
   }
-  /**
+  /
    * @internal
    */
   _setProp(key, val, shouldReflect = true, shouldUpdate = true) {

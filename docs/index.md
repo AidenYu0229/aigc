@@ -15,11 +15,11 @@ hero:
       link: https://api.aigc369.com/'
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: 调用地址
+    details: 查看调用地址
+  - title: 计费说明
+    details: 额度计费说明
+  - title: 项目接入
+    details: 欢迎各大项目对接
 ---
 

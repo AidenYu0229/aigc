@@ -3,9 +3,9 @@
 layout: home
 
 hero:
-  name: "全链路AI模型接口"
+  name: "全链路 AI 模型接口"
   text: "简单 便宜 透明 快速"
-  tagline: 感受前所未有的便捷
+  tagline: 100% 官方直连 API 中转 只做高质量高并发稳定接口 企业级千兆光纤带宽保障
   actions:
     - theme: brand
       text: 使用说明

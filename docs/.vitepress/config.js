@@ -53,8 +53,8 @@ export default {
           collapsed: false,  
           items: [
             { text: "欢迎使用", link: "/guide/hello" },
-            { text: "功能介绍", link: "/guide/introduce" },
-            { text: "下载App", link: "/guide/app" },
+            { text: "接口优势", link: "/guide/introduce" },
+            { text: "如何注册", link: "/guide/app" },
             { text: "套餐定价", link: "/guide/price" },
           ],
         },

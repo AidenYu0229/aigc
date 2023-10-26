@@ -3,8 +3,8 @@
 layout: home
 
 hero:
-  name: "佩奇聚合 API"
-  text: "全链路AI模型接口"
+  name: "全链路AI模型接口"
+  text: "简单 便宜 透明 快速"
   tagline: 感受前所未有的便捷
   actions:
     - theme: brand

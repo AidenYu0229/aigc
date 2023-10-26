@@ -4,8 +4,8 @@ export default {
   description: '人工智能服务平台', //mate标签description，多用于搜索引擎抓取摘要
   themeConfig: {
     lang: "zh-CN",
-    siteTitle: "AI Ultra",
-    logo: "/logo.png",
+    siteTitle: " ",
+    logo: " ",
     nav: [
       { text: "首页", link: "/" },
       { text: "使用教程", link: "/guide/hello", activeMatch: "/guide/" },

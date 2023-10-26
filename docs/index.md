@@ -5,9 +5,9 @@ layout: home
 title: 主页
 lastUpdated: true
 hero:
-  name: "AI Ultra 社区版"
-  text: "您的私人AI助理"
-  tagline: 让未来触手可及 v0.9震撼来袭！
+  name: "全链路AI模型聚合接口"
+  text: "简单 便宜 透明 快速"
+  tagline: 简单 便宜 透明 快速
   
   actions:
     - theme: brand

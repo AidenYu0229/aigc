@@ -11,18 +11,18 @@ hero:
   
   actions:
     - theme: brand
-      text: 前往社区站
-      link: https://chat.aiutra.com
+      text: 使用说明
+      link: 
       
     - theme: alt
-      text: 下载App
-      link: https://tuchuang111025.oss-cn-shenzhen.aliyuncs.com/AI%20Ultra%20v5.apk
+      text: 打开网站
+      link: https://api.aigc369.com/
 
 features:
   - icon: 🎁
     title: 免费使用
     details: 注册登录后即可免费使用
-    link: https://chat.aiutra.com
+    link: https://api.aigc369.com/register
     linkText: 立即体验
 
   - icon: 🎨
@@ -46,8 +46,8 @@ features:
   - icon: 🌈
     title: 持续维护
     details: 持续优化用户使用体验
-    link: https://qm.qq.com/cgi-bin/qm/qr?k=qHrlWP7Okj4oW3TrT9lE6FlUbQvoQGTS&jump_from=webapi&authKey=KZGx1EDgckH5IriGMdNyppPnawFGLSKQfdunBV8n1pv0akfX+yXDptMORGf9YIaT
-    linkText: 加入QQ群
+    link: https://pd.qq.com/s/37fot8iuf
+    linkText: 加入QQ频道
 
   - icon: ⚙️
     title: 售后支持

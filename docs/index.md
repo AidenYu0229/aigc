@@ -3,9 +3,9 @@
 layout: home
 
 hero:
-  name: "My 1Awesome Project"
-  text: "A VitePress Site"
-  tagline: My great project tagline
+  name: "佩奇聚合 API"
+  text: "全链路AI模型接口"
+  tagline: 感受前所未有的便捷
   actions:
     - theme: brand
       text: 使用说明
